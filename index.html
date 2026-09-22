@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Flores para Paz 🌻</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:Arial, sans-serif;
+    background:#fff6e8;
+    color:#49362a;
+}
+
+.pantalla{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+}
+
+.tarjeta{
+    width:100%;
+    max-width:800px;
+    min-height:92vh;
+    background:#fffaf2;
+    border-radius:28px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 15px 45px rgba(0,0,0,.15);
+}
+
+.inicio{
+    position:absolute;
+    inset:0;
+    z-index:10;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px;
+
+    background:#fffaf2;
+}
+
+.flor{
+    font-size:120px;
+
+    animation:flotar 2s
+    infinite ease-in-out;
+}
+
+@keyframes flotar{
+
+    50%{
+        transform:
+        translateY(-10px);
+    }
+
+}
+
+h1{
+
+    font-size:35px;
+
+    margin:15px;
+
+}
+
+.inicio p{
+
+    font-size:20px;
+
+}
+
+.boton{
+
+    border:none;
+
+    background:#e1a611;
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 20px
+    rgba(194,137,0,.25);
+
+}
+
+.contenido{
+
+    display:none;
+
+    min-height:92vh;
+
+    padding:30px 25px;
+
+    text-align:center;
+
+}
+
+.contenido h2{
+
+    font-size:34px;
+
+}
+
+.contenido p{
+
+    font-size:19px;
+
+    line-height:1.6;
+
+}
+
+.corazon{
+
+    font-size:85px;
+
+    margin:30px 0;
+
+    transform:scale(.1);
+
+    opacity:0;
+
+    transition:1.5s;
+
+    line-height:1.1;
+
+}
+
+.corazon.crecer{
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+.nombre{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    border-top:
+    2px solid #6c5546;
+
+    padding-top:20px;
+
+}
+
+.petalo{
+
+    position:fixed;
+
+    top:-50px;
+
+    font-size:25px;
+
+    z-index:50;
+
+    animation:
+    caer 6s linear forwards;
+
+}
+
+@keyframes caer{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(500deg);
+
+        opacity:0;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="pantalla">
+
+
+<div class="tarjeta">
+
+
+<div class="inicio"
+id="inicio">
+
+
+<div class="flor">
+
+🌻
+
+</div>
+
+
+<h1>
+
+Flores para ti, Paz
+
+</h1>
+
+
+<p>
+
+Tengo algo bonito para ti 💛
+
+</p>
+
+
+<button
+class="boton"
+id="boton">
+
+Tocar para abrir 🌻
+
+</button>
+
+
+</div>
+
+
+
+<div
+class="contenido"
+id="contenido">
+
+
+<h2>
+
+Flores amarillas para Paz 🌻
+
+</h2>
+
+
+<p>
+
+Si pudiera elegir
+un lugar seguro,
+sería a tu lado.
+
+</p>
+
+
+<p>
+
+Hay personas que llegan
+y hacen que los días
+se sientan un poquito
+más bonitos.
+
+</p>
+
+
+<p>
+
+Y tú eres una
+de esas personas.
+
+</p>
+
+
+<p>
+
+Gracias por los momentos,
+las conversaciones
+y por ser una persona
+especial en mi vida.
+
+</p>
+
+
+<p>
+
+<b>
+
+Te quiero mucho, Paz. 💛
+
+</b>
+
+</p>
+
+
+
+<div
+class="corazon"
+id="corazon">
+
+💛🌻💛
+<br>
+
+🌻💛🌻
+<br>
+
+💛🌻💛
+
+</div>
+
+
+
+<div class="nombre">
+
+Paz 💛
+
+</div>
+
+
+<p>
+
+Una flor para recordarte
+lo especial que eres.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+const inicio =
+document.getElementById("inicio");
+
+
+const contenido =
+document.getElementById("contenido");
+
+
+const corazon =
+document.getElementById("corazon");
+
+
+const boton =
+document.getElementById("boton");
+
+
+
+function abrir(){
+
+
+inicio.style.display =
+"none";
+
+
+contenido.style.display =
+"block";
+
+
+setTimeout(function(){
+
+corazon.classList
+.add("crecer");
+
+},300);
+
+
+
+const cosas =
+["🌻","💛","✨"];
+
+
+
+for(let i=0;
+i<25;
+i++){
+
+
+const petalo =
+document.createElement("div");
+
+
+petalo.className =
+"petalo";
+
+
+petalo.innerHTML =
+
+cosas[
+Math.floor(
+Math.random()
+*
+cosas.length
+)
+];
+
+
+petalo.style.left =
+
+Math.random()
+*
+100
++
+"%";
+
+
+petalo.style
+.animationDuration =
+
+(4+
+Math.random()*4)
++
+"s";
+
+
+document.body
+.appendChild(petalo);
+
+
+
+setTimeout(function(){
+
+petalo.remove();
+
+},8000);
+
+
+}
+
+
+}
+
+
+
+boton.addEventListener(
+"click",
+abrir
+);
+
+
+
+boton.addEventListener(
+"touchend",
+function(e){
+
+e.preventDefault();
+
+abrir();
+
+}
+);
+
+
+</script>
+
+
+</body>
+</html>
